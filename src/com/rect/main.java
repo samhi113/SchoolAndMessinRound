@@ -2,11 +2,8 @@ package com.rect;
 
 public class main {
     public static void main(String[] args) {
-        rect rect1 = new rect("H", 4.52, 7.93);
-        System.out.println(rect1);
-
-        square square1 = new square("Square boi", 57.32);
-        System.out.println();
-        System.out.println(square1);
+        rect rect1 = new rect(3.7, 2.48, 45.6, 0.91);
+        quad quad1 = new quad(1, 2, 3, 4, 5, 6, 7, 8);
+        square square1 = new square(5, 2, 7);
     }
 }

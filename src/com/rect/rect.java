@@ -1,18 +1,12 @@
 package com.rect;
 
-public class rect {
+public class rect extends quad{
 
     private String name;
     private double length, width;
 
-    public rect (String name, double length, double width){
-        this.name = name;
-        this.length = length;
-        this.width = width;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public rect (double x1, double y1, double length, double width){
+       super(x1, y1, x1+length, y1, x1, y1+width, x1+length, y1+width);
     }
 
     public void setLength(double length) {
@@ -21,10 +15,6 @@ public class rect {
 
     public void setWidth(double width) {
         this.width = width;
-    }
-
-    public String getName(){
-        return this.name;
     }
 
     public double getWidth() {
