@@ -64,7 +64,8 @@ public class connectFourGame {
             for (int j = 0; j < 7; j++) {
                 spots[i][j] = spot.empty;
                 spotLabels[i][j] = new JLabel("");
-                spotLabels[i][j].setBounds(i*100, j*100, 50, 50);
+                spotLabels[i][j].setBounds((i*50)+50, (j*50)+50, 50, 50);
+                panel.add(spotLabels[i][j]);
             }
         }
     }
@@ -72,49 +73,49 @@ public class connectFourGame {
     public static class columnButton1Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            attemptAndMakeMove(1);
+            attemptAndMakeMove(0);
         }
     }
 
     public static class columnButton2Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            attemptAndMakeMove(2);
+            attemptAndMakeMove(1);
         }
     }
 
     public static class columnButton3Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            attemptAndMakeMove(3);
+            attemptAndMakeMove(2);
         }
     }
 
     public static class columnButton4Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            attemptAndMakeMove(4);
+            attemptAndMakeMove(3);
         }
     }
 
     public static class columnButton5Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            attemptAndMakeMove(5);
+            attemptAndMakeMove(4);
         }
     }
 
     public static class columnButton6Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            attemptAndMakeMove(6);
+            attemptAndMakeMove(5);
         }
     }
 
     public static class columnButton7Listener implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e) {
-            attemptAndMakeMove(7);
+            attemptAndMakeMove(6);
         }
     }
 
@@ -128,21 +129,23 @@ public class connectFourGame {
              if (spots[xLocation][i] == spot.empty && spots[xLocation][i+1] != spot.empty){
                 if (theCurrentPlayer == currentPlayer.x){
                     spots[xLocation][i] = spot.x;
-                    spotLabels[xLocation][i] = new JLabel("X");
+                    spotLabels[xLocation][i].setText("X");
                 } else {
                     spots[xLocation][i] = spot.o;
-                    spotLabels[xLocation][i] = new JLabel("O");
+                    spotLabels[xLocation][i].setText("O");
                 }
                 switchPlayers();
+                panel.updateUI();
             } else {
                  if (theCurrentPlayer == currentPlayer.x){
-                     spots[xLocation][7] = spot.x;
-                     spotLabels[xLocation][7] = new JLabel("X");
+                     spots[xLocation][6] = spot.x;
+                     spotLabels[xLocation][6].setText("X");
                  } else {
-                     spots[xLocation][7] = spot.o;
-                     spotLabels[xLocation][7] = new JLabel("O");
+                     spots[xLocation][6] = spot.o;
+                     spotLabels[xLocation][6].setText("O");
                  }
                  switchPlayers();
+                 panel.updateUI();
              }
         }
     }
