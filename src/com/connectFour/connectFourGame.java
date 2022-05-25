@@ -64,7 +64,7 @@ public class connectFourGame {
             for (int j = 0; j < 7; j++) {
                 spots[i][j] = spot.empty;
                 spotLabels[i][j] = new JLabel("");
-                spotLabels[i][j].setBounds((i*50)+50, (j*50)+50, 50, 50);
+                spotLabels[i][j].setLocation((i*50)+50, (j*50)+50);
                 panel.add(spotLabels[i][j]);
             }
         }
@@ -148,6 +148,15 @@ public class connectFourGame {
                  panel.updateUI();
              }
         }
+    }
+
+    public static boolean checkWin(spot spotJustPlaced){
+        //vertical win
+        if ()
+
+        //horizontal win
+        //diagonal TL to BR win
+        //diagonal TR to BL win
     }
 
     public static void switchPlayers(){
